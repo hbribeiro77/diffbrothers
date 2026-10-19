@@ -1,0 +1,402 @@
+:root {
+  color: #1c1917;
+  background: #f6f3ee;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.45;
+  --origem-a: #f3ead7;
+  --origem-b: #e4eaf6;
+  --origem-escrito: #efe6f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.db-pagina {
+  margin: 0 auto;
+  padding: 12px 12px 24px;
+}
+
+.db-cabecalho h1 {
+  margin: 4px 0 8px;
+  font-size: 1.8rem;
+  letter-spacing: -0.03em;
+}
+
+.db-marca {
+  margin: 0;
+  color: #1f4d3a;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.db-subtitulo,
+.db-documento-nota,
+.db-aviso-entrada,
+.db-barra-textos-recolhidos p {
+  color: #57534e;
+}
+
+.db-entradas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.db-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.db-campo textarea,
+.db-escrever textarea,
+.db-documento-texto {
+  width: 100%;
+  border: 1px solid #d6d3d1;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.db-acoes-entrada {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.db-botao-primario,
+.db-botao-secundario,
+.db-decisoes button,
+.db-modo {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.db-botao-primario {
+  background: #1f4d3a;
+  color: #fff;
+}
+
+.db-botao-primario:disabled {
+  background: #a8a29e;
+  cursor: not-allowed;
+}
+
+.db-botao-secundario,
+.db-modo,
+.db-decisoes button {
+  background: #fff;
+  border-color: #d6d3d1;
+  color: #1c1917;
+}
+
+.db-barra-textos-recolhidos,
+.db-confirmacao,
+.db-comparacao,
+.db-documento {
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid #e7e5e4;
+  border-radius: 14px;
+}
+
+.db-barra-textos-recolhidos,
+.db-confirmacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+}
+
+.db-confirmacao {
+  border-color: #fcd34d;
+  background: #fffbeb;
+}
+
+.db-confirmacao p,
+.db-barra-textos-recolhidos p {
+  margin: 0;
+}
+
+.db-confirmacao-acoes,
+.db-documento-topo,
+.db-comparacao-topo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.db-resultado-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.db-comparacao,
+.db-documento {
+  padding: 10px;
+}
+
+.db-documento {
+  position: sticky;
+  top: 16px;
+}
+
+.db-documento h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.db-resumo {
+  margin: 0;
+}
+
+.db-modos,
+.db-decisoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.db-modo-ativo,
+.db-decisoes button[aria-pressed="true"] {
+  background: #1f4d3a;
+  color: #fff;
+  border-color: #1f4d3a;
+}
+
+.db-aviso-alinhamento {
+  margin: 10px 0 0;
+  color: #57534e;
+}
+
+.db-blocos {
+  margin-top: 12px;
+  border: 1px solid #e7e5e4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.db-bloco {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+}
+
+.db-numero {
+  align-self: start;
+  justify-self: center;
+  display: inline-grid;
+  place-items: center;
+  margin: 6px;
+  border: 0;
+  border-radius: 999px;
+  background: #1f4d3a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  width: 1.6rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.db-bloco-miolo {
+  min-width: 0;
+  cursor: pointer;
+}
+
+.db-bloco-destacado,
+.db-trecho-destacado {
+  outline: 2px solid #1f4d3a;
+  outline-offset: -2px;
+}
+
+.db-bloco + .db-bloco {
+  border-top: 1px solid #e7e5e4;
+}
+
+.db-bloco-diferenca {
+  background: #fffdf8;
+  padding-bottom: 8px;
+}
+
+.db-decisoes,
+.db-escrever {
+  padding: 8px 10px 0;
+}
+
+.db-escrever {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.92rem;
+}
+
+.db-split-cabecalho,
+.db-split-linha,
+.db-diff-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.db-diff-linha {
+  grid-template-columns: 1.25rem 1fr;
+  padding: 2px 8px;
+}
+
+.db-cabecalho-colunas {
+  margin-top: 12px;
+}
+
+.db-split-cabecalho {
+  padding: 6px 10px;
+  color: #57534e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.db-split-linha pre,
+.db-diff-linha span,
+.db-documento-texto,
+.db-omitidas {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92rem;
+}
+
+.db-split-linha pre {
+  margin: 0;
+  padding: 3px 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 1.6em;
+}
+
+.db-linha-igual {
+  background: #fafaf9;
+}
+
+.db-origem-a {
+  background: var(--origem-a);
+}
+
+.db-origem-b {
+  background: var(--origem-b);
+}
+
+.db-origem-escrito {
+  background: var(--origem-escrito);
+}
+
+.db-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #57534e;
+  font-size: 0.82rem;
+}
+
+.db-legenda li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.db-amostra {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 3px;
+  border: 1px solid #d6d3d1;
+}
+
+.db-celula-vazia {
+  background: #f5f5f4;
+}
+
+.db-prefixo {
+  color: #78716c;
+  user-select: none;
+}
+
+.db-omitidas {
+  margin: 0;
+  padding: 6px 10px;
+  text-align: center;
+  color: #57534e;
+  background: #f5f5f4;
+  font-style: italic;
+}
+
+.db-aviso-copia {
+  margin: 8px 0 0;
+}
+
+.db-documento-texto {
+  margin: 10px 0 0;
+  min-height: 180px;
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+  border: 1px solid #d6d3d1;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.db-trecho {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  margin: 0;
+  cursor: pointer;
+}
+
+.db-trecho pre {
+  margin: 0;
+  padding: 2px 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 860px) {
+  .db-entradas,
+  .db-resultado-layout,
+  .db-split-cabecalho,
+  .db-split-linha {
+    grid-template-columns: 1fr;
+  }
+
+  .db-documento {
+    position: static;
+  }
+
+  .db-barra-textos-recolhidos,
+  .db-confirmacao,
+  .db-comparacao-topo,
+  .db-documento-topo {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
